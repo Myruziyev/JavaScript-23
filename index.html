@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript-23</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav>
+          <a href="./index.html">
+            <i class="fa-solid fa-crown fa-beat" style="color: black"></i> KING
+          </a>
+        </nav>
+        <nav>
+          <a href="#">Shop</a>
+          <a href="#">Brands</a>
+          <a href="#">Contact us</a>
+          <button type="button">Sign up</button>
+        </nav>
+      </header>
+      <main>
+        <div class="swiper">
+          <p class="p1">
+            <span>Exquisite Watches</span> Choose Luxury, <span>Choose Us</span>
+          </p>
+          <p class="p2">
+            Discover the Perfect Watch for Every Occasion and Elevate Your Style
+            with Timeless Elegance and Precision Craftsmanship - watch
+          </p>
+          <p class="p3">$430.00</p>
+          <ul>
+            <li>
+              <a href="https://www.facebook.com/?locale=ru_RU"
+                ><i class="fab fa-facebook-square" style="color: #ffffff"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://x.com/i/flow/login"
+                ><i class="fab fa-twitter-square" style="color: #ffffff"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/"
+                ><i class="fab fa-youtube-square" style="color: #ffffff"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div class="myswiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./images/Watches.png" alt="watches" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/Watches (1).png" alt="watches" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/Watches (2).png" alt="watches" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/Watches (3).png" alt="watches" />
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+      </main>
+
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <script>
+        var swiper = new Swiper(".myswiper", {
+          loop: true,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+          on: {
+            slideChange: function () {
+              const colors = ["#f4a764", "#838281", "#4caf50", "#f34b21"];
+              const currentIndex = this.realIndex;
+              const bodyElement = document.querySelector("body");
+              bodyElement.style.backgroundColor =
+                colors[currentIndex % colors.length];
+            },
+          },
+        });
+      </script>
+    </div>
+  </body>
+</html>
